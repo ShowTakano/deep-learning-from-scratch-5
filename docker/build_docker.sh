@@ -1,0 +1,1 @@
+docker build -t pytorch26 -f docker/Dockerfile .
