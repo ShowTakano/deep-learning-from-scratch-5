@@ -32,7 +32,8 @@ def show_images(images, labels=None, rows=2, cols=10):
             ax.get_yaxis().set_ticks([])
             i += 1
     plt.tight_layout()
-    plt.show()
+    plt.savefig('images.png')
+    plt.close()
 
 def _pos_encoding(time_idx, output_dim, device='cpu'):
     t, D = time_idx, output_dim
@@ -234,7 +235,8 @@ for epoch in range(epochs):
 plt.plot(losses)
 plt.xlabel('Epoch')
 plt.ylabel('Loss')
-plt.show()
+plt.savefig('losses.png')
+plt.close()
 
 # generate samples
 images, labels = diffuser.sample(model)
